@@ -1,0 +1,15 @@
+<div class="container-md my-3">
+  <p style="color: green"><%= notice %></p>
+
+  <h1>Restaurants</h1>
+  <div id="restaurants">
+    <%= link_to "add a new restaurant", new_restaurant_path, class: "btn btn-primary my-3"%>
+    <ul class="row d-flex list-unstyled">
+      <% @restaurants.each do |restaurant| %>
+      <li class="col-sm-6 col-md-4 col-lg-3 my-2">
+        <%= render restaurant %>
+      <% end %>
+      </div>
+    </li>
+  </ul>
+</div>

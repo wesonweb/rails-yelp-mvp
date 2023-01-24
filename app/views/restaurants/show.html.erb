@@ -1,0 +1,25 @@
+<div class="card border-0 shadow p-3">
+  <p style="color: green"><%= notice %></p>
+  <div class="card-body ">
+    <p>
+      <strong>Name:</strong>
+      <%= @restaurant.name %>
+    </p>
+    <p>
+      <strong>Address:</strong>
+      <%= @restaurant.address %>
+    </p>
+
+    <p>
+      <strong>Category:</strong>
+      <%= @restaurant.category %>
+    </p>
+    <p>
+      <strong>Phone number:</strong>
+      <%= @restaurant.phone_number %>
+    </p>
+    <p>
+      <%= link_to "Back to all restaurants", restaurants_path, class: "btn btn-secondary" %>
+    </p>
+  </div>
+</div>
