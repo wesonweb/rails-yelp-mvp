@@ -4,6 +4,18 @@ class ReviewsController < ApplicationController
     @review = Review.new
   end
 
+  def create
+    @review = Review.new(reviews_params)
+    @review.restaurant = @restaurant
+    @review.save
+
+    if @review.save
+      redirect_to @restaurant, notice: 'Your review was published.'
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def set_review

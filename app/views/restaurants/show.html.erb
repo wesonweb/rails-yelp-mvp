@@ -1,25 +1,35 @@
 <div class="card border-0 shadow p-3">
   <p style="color: green"><%= notice %></p>
   <div class="card-body ">
-    <p>
-      <strong>Name:</strong>
+    <h2 class="d-block mb-3">
       <%= @restaurant.name %>
+    </h2>
+    <p>
+      <strong>Cuisine:</strong>
+      <%= @restaurant.category %>
     </p>
     <p>
       <strong>Address:</strong>
       <%= @restaurant.address %>
     </p>
-
-    <p>
-      <strong>Category:</strong>
-      <%= @restaurant.category %>
-    </p>
     <p>
       <strong>Phone number:</strong>
       <%= @restaurant.phone_number %>
     </p>
+
+    <h2>Reviews</h2>
+      <ul class="list-group">
+        <% @restaurant.reviews.each do |review| %>
+          <li class="list-group-item">
+            <span class="d-block"><%= review.rating %> stars</span>
+            <span class="d-block"><%= review.content %></span>
+          </li>
+        <% end %>
+      </ul>
+
+    <p><%= link_to 'add a review', new_restaurant_review_path(@restaurant), class: "btn btn-primary mt-3" %></p>
     <p>
-      <%= link_to "Back to all restaurants", restaurants_path, class: "btn btn-secondary" %>
+      <%= link_to "Back to all restaurants", restaurants_path, class: "" %>
     </p>
   </div>
 </div>
